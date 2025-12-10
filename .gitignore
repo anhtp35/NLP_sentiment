@@ -1,8 +1,5 @@
-# Model files (too large for GitHub - use Git LFS or download separately)
-models/best_model.pt
-models/ensemble_thresholds.npy
-*.pt
-*.npy
+# Model files are tracked with Git LFS
+# (No longer ignored - stored via LFS)
 
 # Python
 __pycache__/
