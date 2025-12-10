@@ -1,0 +1,43 @@
+/* File: extension/style.css */
+/* .ai-emotion-badge {
+    font-size: 10px;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    z-index: 9999;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    white-space: nowrap;
+} */
+
+
+
+/* File: extension/style.css */
+
+.ai-emotion-badge {
+    /* Cơ bản */
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 10px;
+    color: white;
+    
+    /* Box Model */
+    padding: 2px 8px;
+    border-radius: 12px;
+    
+    /* Vị trí TƯƠNG ĐỐI SO VỚI TIN NHẮN */
+    position: absolute;
+    right: 0;   /* Căn phải */
+    
+    /* Đảm bảo luôn nằm trên cùng */
+    z-index: 999999;
+    
+    /* Trang trí mặc định (sẽ bị JS ghi đè nếu là emoji) */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    white-space: nowrap;
+    
+    /* Hiệu ứng chuyển động nhẹ (Optional) */
+    transition: all 0.3s ease;
+}

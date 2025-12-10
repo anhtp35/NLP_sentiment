@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  emotion-api:
+    build: .
+    container_name: emotion-classification-api
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_PATH=/app/models/best_model.pt
+      - THRESHOLDS_PATH=/app/models/ensemble_thresholds.npy
+      - DEVICE=cpu  # Change to 'cuda' if using GPU
+    restart: unless-stopped
+    # Model files are now INSIDE the image, no volume mount needed
+    # Uncomment below if you want to use external model files instead:
+    # volumes:
+    #   - ./models:/app/models
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # GPU version (uncomment if using NVIDIA GPU)
+  # emotion-api-gpu:
+  #   build: .
+  #   container_name: emotion-classification-api-gpu
+  #   ports:
+  #     - "8000:8000"
+  #   environment:
+  #     - MODEL_PATH=/app/best_model.pt
+  #     - THRESHOLDS_PATH=/app/ensemble_thresholds.npy
+  #     - DEVICE=cuda
+  #   deploy:
+  #     resources:
+  #       reservations:
+  #         devices:
+  #           - driver: nvidia
+  #             count: 1
+  #             capabilities: [gpu]
+  #   restart: unless-stopped
