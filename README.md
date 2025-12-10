@@ -56,10 +56,24 @@ emotion_api/
 
 ## How to Use This Project
 
-### Step 1: Clone/Download and Run Docker
+### Prerequisites
+
+- **Docker** and **Docker Compose** installed
+- **Git LFS** installed (for downloading model files)
 
 ```bash
-# Clone the repository
+# Install Git LFS (if not already installed)
+# Windows: Download from https://git-lfs.github.com/
+# Mac: brew install git-lfs
+# Ubuntu: sudo apt install git-lfs
+
+git lfs install
+```
+
+### Step 1: Clone and Run Docker
+
+```bash
+# Clone the repository (Git LFS will download model files automatically)
 git clone <your-repo-url>
 cd emotion_api
 
