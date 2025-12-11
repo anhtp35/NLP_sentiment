@@ -73,9 +73,12 @@ git lfs install
 ### Step 1: Clone and Run Docker
 
 ```bash
-# Clone the repository (Git LFS will download model files automatically)
-git clone <your-repo-url>
-cd emotion_api
+# Install Git LFS first (required for model files)
+git lfs install
+
+# Clone the repository (~1.7GB model files will download automatically)
+git clone https://github.com/anhtp35/NLP_sentiment.git
+cd NLP_sentiment
 
 # Build and run with Docker Compose
 docker-compose up --build
